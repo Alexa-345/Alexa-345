@@ -16,7 +16,7 @@ sudo ufw disable
 if [[ $(lsb_release -rs) == "22"* ]]; then
 	systemctl restart packagekit.service udisks2.service
 	sudo DEBIAN_FRONTEND=noninteractive apt install python2 -y
-elif [[ $(lsb_release -rs) == "11"* ]]; then
+elif [[ $(lsb_release -rs) == "21"* ]]; then
 	/etc/needrestart/restart.d/dbus.service
 	systemctl restart irqbalance.service ModemManager.service multipathd.service packagekit.service polkit.service ssh.service systemd-logind.service udisks2.service unattended-upgrades.service user@0.service
 	sudo DEBIAN_FRONTEND=noninteractive apt install python -y
@@ -1184,7 +1184,7 @@ elif [[ $(lsb_release -rs) == "20"* ]]; then
 elif [[ $(lsb_release -rs) == "21"* ]]; then
 
 	   clear
-       echo "Install Debian11"	 
+       echo "Install Ubuntu21"	 
 	   sleep 3
 	   system_update
 	   install_openvpn
